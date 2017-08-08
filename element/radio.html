@@ -14,7 +14,7 @@
   <div id="app" v-cloak>
     <template>
       <el-radio class="radio" v-model="radio" label="1">备选项</el-radio>
-      <el-radio class="radio" v-model="radio" label="2">备选项</el-radio>
+      <el-radio class="radio" v-model="radio" label="2" @click="changeRadio">备选项</el-radio>
     </template>
 
     <template>
@@ -42,6 +42,11 @@ var vm = new Vue({
   watch: {
     radio2: function (value, old) {
       console.log(value, old)
+    }
+  },
+  methods: {
+    changeRadio: function (value) {
+      console.log('xxx')
     }
   }
 })

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iview example</title>
+    <!-- 引入Vue -->
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <!-- 引入组件库 -->
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <template>
+        <Button>Default</Button>
+        <Button type="primary">Primary</Button>
+        <Button type="ghost">Ghost</Button>
+        <Button type="dashed">Dashed</Button>
+        <Button type="text">Text</Button>
+        <br><br>
+        <Button type="info">信息按钮</Button>
+        <Button type="success">成功按钮</Button>
+        <Button type="warning">警告按钮</Button>
+        <Button type="error">错误按钮</Button>
+    </template>
+</div>
+<script>
+var Main = {
+    data() {
+      return {
+        checked: true
+      };
+    }
+  };
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#app')    
+</script>
+</body>
+</html>
