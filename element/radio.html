@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="static/index.css">
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <template>
+      <el-radio class="radio" v-model="radio" label="1">备选项</el-radio>
+      <el-radio class="radio" v-model="radio" label="2">备选项</el-radio>
+    </template>
+  </div>
+</body>
+
+<!-- 先引入 Vue -->
+<script src="static/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="static/index.js"></script>
+<script>
+var Main = {
+  data () {
+    return {
+      radio: '1'
+    };
+  }
+}
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#app')
+</script>
+</html>
