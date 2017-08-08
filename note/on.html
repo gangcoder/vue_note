@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>on 绑定事件</title>
+    <!-- 引入vue -->
+    <script src="../static/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+    
+<script>
+    var vm = new Vue({
+        el: "#example",
+        data: {
+            message: "hello"
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+</body>
+</html>

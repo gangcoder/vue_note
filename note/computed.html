@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+    <!-- 引入vue -->
+    <script src="../static/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <p>{{message}}</p>
+    <p>{{messageReverse}}</p>
+</div>
+
+    
+<script>
+    var vm = new Vue({
+        el: "#example",
+        data: {
+            message: 'hello'
+        },
+        computed: {
+            messageReverse: function () {
+                return this.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+
+<!-- methods -->
+<div id="example_method">
+    <p>{{message}}</p>
+    <p>{{messageReverse()}}</p>
+</div>
+
+<script>
+    var vm_method = new Vue({
+        el: "#example_method",
+        data: {
+            message: "hello"
+        },
+        methods: {
+            messageReverse: function () {
+                return "olleh";
+            }
+        }
+    })
+</script>
+</body>
+</html>

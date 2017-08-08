@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for 循环</title>
+    <!-- 引入vue -->
+    <script src="../static/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <ol>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+    </ol>
+</div>
+    
+<script>
+    var vm = new Vue({
+        el: "#example",
+        data: {
+            todos: [
+                {text: "js"},
+                {text: "css"},
+                {text: "vue"}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

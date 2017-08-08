@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch</title>
+    <!-- 引入vue -->
+    <script src="../static/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <p>
+         Ask a yes/no question:
+        <input v-model="question">
+    </p>
+    <p>{{answer}}</p>
+</div>
+
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#example",
+        data: {
+            answer: '',
+            question: ''
+        },
+        watch: {
+            // 如果question 发生改变，这个函数会执行
+            question: function (newQuestion) {
+                this.getAnswer();
+            }
+        },
+        methods: {
+            // debounce 频率限制工具
+            getAnswer: _.debounce(function () {
+                this.answer = 'yes';
+            }, 500)
+        }
+    })
+</script>
+</body>
+</html>

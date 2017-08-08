@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <!-- 引入vue -->
+    <script src="../static/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <ol>
+        <todo-item 
+            v-for="item in groceryList" 
+            v-bind:todo="item" 
+            v-bind:key="item.id"></todo-item>
+    </ol>
+</div>
+    
+<script>
+    // 注册组件
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{todo.text}}</li>'
+    })
+
+    var vm = new Vue({
+        el: "#example",
+        data: {
+            groceryList: [
+                {id: 0, text: 'js'},
+                {id: 1, text: 'css'},
+                {id: 2, text: 'vue'},
+            ]
+        }
+    })
+</script>
+</body>
+</html>
