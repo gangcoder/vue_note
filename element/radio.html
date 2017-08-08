@@ -16,6 +16,15 @@
       <el-radio class="radio" v-model="radio" label="1">备选项</el-radio>
       <el-radio class="radio" v-model="radio" label="2">备选项</el-radio>
     </template>
+
+    <template>
+      <el-radio-group v-model="radio2">
+        <el-radio :label="3">备选项</el-radio>
+        <el-radio :label="6">备选项</el-radio>
+        <el-radio :label="9">备选项</el-radio>
+      </el-radio-group>
+    </template>
+
   </div>
 </body>
 
@@ -24,14 +33,17 @@
 <!-- 引入组件库 -->
 <script src="static/index.js"></script>
 <script>
-var Main = {
-  data () {
-    return {
-      radio: '1'
-    };
+var vm = new Vue({
+  el: "#app",
+  data: {
+    radio: "1",
+    radio2: 3
+  },
+  watch: {
+    radio2: function (value, old) {
+      console.log(value, old)
+    }
   }
-}
-var Ctor = Vue.extend(Main)
-new Ctor().$mount('#app')
+})
 </script>
 </html>
